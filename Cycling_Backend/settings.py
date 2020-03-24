@@ -35,8 +35,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'rest_framework',
-    'cyclingDB_app',
+    'rest_framework',  # add django rest framework
+    'cyclingDB_app',  # add our app
+    'drf_yasg',  # add swagger support
 ]
 
 MIDDLEWARE = [
@@ -74,15 +75,15 @@ WSGI_APPLICATION = 'Cycling_Backend.wsgi.application'
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 DATABASES = {
-
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'cycling_DB',
-        'USER': 'admin',
-        'PASSWORD': 'admin',
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
-    }
+    'default':
+        {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': 'cyclingDB',
+            'USER': 'postgres',
+            'PASSWORD': 'root',
+            'HOST': '127.0.0.1',
+            'PORT': '5432',
+        }
 }
 
 # Password validation
@@ -120,3 +121,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 10,
+}
