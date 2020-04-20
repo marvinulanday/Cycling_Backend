@@ -16,7 +16,7 @@ class CyclistList(generics.ListCreateAPIView):
     pagination_class = MyPagination
 
 
-catergory_response = openapi.Response('Response description', CyclistSerializer)
+category_response = openapi.Response('Response description', CyclistSerializer)
 
 request_category_put = openapi.Schema(type=openapi.TYPE_OBJECT,
                                       required=['team_id', 'country_id', 'specialty_id', 'last_name',

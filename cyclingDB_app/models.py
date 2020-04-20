@@ -22,7 +22,6 @@ class Race(models.Model):
     name = models.CharField(max_length=70, blank=False)
     popularity = models.IntegerField(blank=False)
     num_stages = models.IntegerField(blank=False)
-    stage_km = models.IntegerField(blank=False)
 
     def __str__(self):
         return "%s" % self.name
@@ -32,6 +31,9 @@ class TeamRace(models.Model):
     team = models.ForeignKey(Team, on_delete=models.CASCADE, blank=False)
     race = models.ForeignKey(Race, on_delete=models.CASCADE, blank=False)
 
+    def __str__(self):
+        return "%s" % self.team.name + " - " + self.race.name
+
 
 class Specialty(models.Model):
     name = models.CharField(max_length=70, blank=False)
@@ -40,13 +42,17 @@ class Specialty(models.Model):
         return "%s" % self.name
 
 
-class Stage:
+class Stage(models.Model):
     race = models.ForeignKey(Race, on_delete=models.CASCADE, blank=False)
     specialty = models.ForeignKey(Specialty, on_delete=models.CASCADE, blank=False)
     name = models.CharField(max_length=70, blank=False)
     day = models.IntegerField(blank=False)
     month = models.IntegerField(blank=False)
     stage_number = models.IntegerField(blank=False)
+    stage_km = models.IntegerField(blank=False)
+
+    def __str__(self):
+        return "%s" % self.name
 
 
 class Cyclist(models.Model):
@@ -69,4 +75,4 @@ class Cyclist(models.Model):
     timetrial = models.IntegerField(blank=False)
 
     def __str__(self):
-        return "%s" % self.firstname
+        return "%s" % self.first_name
