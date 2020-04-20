@@ -1,4 +1,4 @@
-from cyclingDB_app.models import Country, Specialty, Race, Team, Stage, Cyclist
+from cyclingDB_app.models import *
 
 Country.objects.bulk_create([
     Country(name='ESP'),
@@ -43,16 +43,16 @@ Specialty.objects.bulk_create([
 ])
 
 Race.objects.bulk_create([
-    Race(country_id=3, name='Tour de France', popularity=100, number_stages=21),
-    Race(country_id=2, name='UCI World Championships', popularity=95, number_stages=1),
-    Race(country_id=18, name='Giro de Italia', popularity=92, number_stages=21),
-    Race(country_id=3, name='Paris-Roubaix', popularity=91, number_stages=7),
-    Race(country_id=6, name='Ronde van Vlaanderen', popularity=90, number_stages=7),
-    Race(country_id=5, name='Milano-Sanremo', popularity=90, number_stages=7),
-    Race(country_id=5, name='La Vuelta', popularity=90, number_stages=21),
-    Race(country_id=5, name='Paris-Nice', popularity=85, number_stages=7),
-    Race(country_id=5, name='Tour de Suisse', popularity=80, number_stages=7),
-    Race(country_id=5, name='Volta Ciclista a Catalunya', popularity=75, number_stages=7),
+    Race(country_id=3, name='Tour de France', popularity=100, num_stages=21, stage_km=1),
+    Race(country_id=2, name='UCI World Championships', popularity=95, num_stages=1, stage_km=1),
+    Race(country_id=18, name='Giro de Italia', popularity=92, num_stages=21, stage_km=1),
+    Race(country_id=3, name='Paris-Roubaix', popularity=91, num_stages=7, stage_km=1),
+    Race(country_id=6, name='Ronde van Vlaanderen', popularity=90, num_stages=7, stage_km=1),
+    Race(country_id=5, name='Milano-Sanremo', popularity=90, num_stages=7, stage_km=1),
+    Race(country_id=5, name='La Vuelta', popularity=90, num_stages=21, stage_km=1),
+    Race(country_id=5, name='Paris-Nice', popularity=85, num_stages=7, stage_km=1),
+    Race(country_id=5, name='Tour de Suisse', popularity=80, num_stages=7, stage_km=1),
+    Race(country_id=5, name='Volta Ciclista a Catalunya', popularity=75, num_stages=7, stage_km=1),
 ])
 
 Team.objects.bulk_create([

@@ -5,41 +5,41 @@ from cyclingDB_app.models import *
 
 class CountrySerializer(serializers.ModelSerializer):
     class Meta:
-        model = Country,
+        model = Country
         fields = '__all__'
 
 
 class TeamSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Team,
+        model = Team
         fields = '__all__'
 
 
 class RaceSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Race,
+        model = Race
         fields = '__all__'
 
 
 class TeamRaceSerializer(serializers.ModelSerializer):
     class Meta:
-        model = TeamRace,
+        model = TeamRace
         fields = '__all__'
 
 
 class SpecialtySerializer(serializers.ModelSerializer):
     class Meta:
-        model = Specialty,
+        model = Specialty
         fields = '__all__'
 
 
 class StageSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Stage,
+        model = Stage
         fields = '__all__'
 
 
 class CyclistSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Cyclist,
+        model = Cyclist
         fields = '__all__'
