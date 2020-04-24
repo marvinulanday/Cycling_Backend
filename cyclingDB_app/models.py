@@ -3,6 +3,7 @@ from django.db import models
 
 class Country(models.Model):
     name = models.CharField(max_length=70, blank=False)
+    objects = models.Manager()
 
     def __str__(self):
         return "%s" % self.name
@@ -12,6 +13,7 @@ class Team(models.Model):
     country = models.ForeignKey(Country, on_delete=models.CASCADE, blank=False)
     name = models.CharField(max_length=70, blank=False)
     manager = models.CharField(max_length=70, blank=False)
+    objects = models.Manager()
 
     def __str__(self):
         return "%s" % self.name
@@ -22,6 +24,7 @@ class Race(models.Model):
     name = models.CharField(max_length=70, blank=False)
     popularity = models.IntegerField(blank=False)
     num_stages = models.IntegerField(blank=False)
+    objects = models.Manager()
 
     def __str__(self):
         return "%s" % self.name
@@ -30,6 +33,7 @@ class Race(models.Model):
 class TeamRace(models.Model):
     team = models.ForeignKey(Team, on_delete=models.CASCADE, blank=False)
     race = models.ForeignKey(Race, on_delete=models.CASCADE, blank=False)
+    objects = models.Manager()
 
     def __str__(self):
         return "%s" % self.team.name + " - " + self.race.name
@@ -37,6 +41,7 @@ class TeamRace(models.Model):
 
 class Specialty(models.Model):
     name = models.CharField(max_length=70, blank=False)
+    objects = models.Manager()
 
     def __str__(self):
         return "%s" % self.name
@@ -50,6 +55,7 @@ class Stage(models.Model):
     month = models.IntegerField(blank=False)
     stage_number = models.IntegerField(blank=False)
     stage_km = models.IntegerField(blank=False)
+    objects = models.Manager()
 
     def __str__(self):
         return "%s" % self.name
@@ -73,6 +79,7 @@ class Cyclist(models.Model):
     resistance = models.IntegerField(blank=False)
     recuperation = models.IntegerField(blank=False)
     timetrial = models.IntegerField(blank=False)
+    objects = models.Manager()
 
     def __str__(self):
         return "%s" % self.first_name
