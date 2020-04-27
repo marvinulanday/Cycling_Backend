@@ -14,7 +14,9 @@
 
 Primero, creamos la base de datos en pgAmin 4 con el nombre de **cyclingDB**.
 
-A continuación, desde la terminal, accedemos al directorio del proyecto y aplicamos el siguiente comando para crear las tablas de los modelos en la base de datos:
+A continuación, en settings.py. modificamos la contraseña del usuario del postgres al que has seleccionado.
+
+Después, desde la terminal, accedemos al directorio del proyecto y aplicamos el siguiente comando para crear las tablas de los modelos en la base de datos:
 
 > python manage.py migrate
 
