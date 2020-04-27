@@ -1,4 +1,4 @@
-# API CyclingDB con Django Rest Framework
+# API CyclingDB con Django Rest Framework y Swagger
 
 ## Índice
 
@@ -28,7 +28,7 @@ Las vistas son de tipo **genérico**, asi que en caso de que no se haya comentad
 
 La aplicación consiste en un BackEnd de Ciclismo que se compone de los modelos: **Cyclist**, **Country**, **Team**, **Race**, **TeamRace**, **Stage** y **Specialty**. 
 
-Toda documentación ha sido realizado con **Swagger** y se podrá ver las rutas para probar a insertar, recoger, modificar y eliminar datos.
+Toda documentación ha sido realizada con **Swagger** y se podrá ver las rutas para probar a insertar, recoger, modificar y eliminar datos sin necesidad de acceder a la ruta correspondiente.
 
 Para iniciar el Backend, desde la terminal se debe insertar el comando:
 
